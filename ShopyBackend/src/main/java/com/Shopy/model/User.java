@@ -18,8 +18,8 @@ public class User {
 	private String mobile;
 	private String role;
 	private String password;
-	private boolean enable;
 	private String ConfirmPassword;
+	private boolean enable;
 
 	public int getUserid() {
 		return userid;
