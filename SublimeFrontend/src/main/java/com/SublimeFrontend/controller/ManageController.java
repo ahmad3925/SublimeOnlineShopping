@@ -12,14 +12,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.Shopy.model.Product;
-import com.Shopy.model.Category;
-import com.Shopy.model.Supplier;
-
-
-import com.Shopy.DAO.SupplierDAO;
 import com.Shopy.DAO.CategoryDAO;
 import com.Shopy.DAO.ProductDAO;
+import com.Shopy.DAO.SupplierDAO;
+import com.Shopy.model.Category;
+import com.Shopy.model.Product;
+import com.Shopy.model.Supplier;
+
+import util.FileUploadUtility;
 
 @Controller
 public class ManageController {
@@ -42,7 +42,19 @@ public class ManageController {
 	}
 	
 	@RequestMapping(value = "/prodReg", method = RequestMethod.POST)
-	public String regP(@ModelAttribute("product") Product product, Model model) {
+	public String regP(@ModelAttribute("product") Product product, Model model,
+			@RequestParam(name = "file1", required = false) MultipartFile file1, HttpServletRequest request,
+			@RequestParam(name = "file2", required = false) MultipartFile file2,
+			@RequestParam(name = "file3", required = false) MultipartFile file3,
+			@RequestParam(name = "file4", required = false) MultipartFile file4) {
+		
+		MultipartFile files[] = { file1, file2, file3, file4 };	
+		if (files[0].isEmpty()) {
+			FileUploadUtility.uploadNoImage(request, product.getCode());
+		} else {
+			FileUploadUtility.uploadFile(request, files, product.getCode());
+		}
+
 	  productDAO.addProduct(product);
 		return "redirect:/Product";
 
@@ -58,8 +70,26 @@ public class ManageController {
 	}
 	
 	@RequestMapping(value = "/updateProd", method = RequestMethod.POST)
-	public String updateS(@ModelAttribute("product") Product product, Model model) {
+	public String updateS(@ModelAttribute("product") Product product, Model model,
+			@RequestParam("file1") MultipartFile file1
+			,@RequestParam("file2") MultipartFile file2,
+			@RequestParam("file3") MultipartFile file3,
+			@RequestParam("file4") MultipartFile file4
+			, HttpServletRequest request) {
+		
+
+		MultipartFile files[]= {file1,file2,file3,file4};
+		
+		if (files[0].isEmpty()) {
+			FileUploadUtility.uploadNoImage(request, product.getCode());
+		}
+
+		else {
+			product.setCode(new Product().getCode());
+
 		productDAO.updateProduct(product);
+		FileUploadUtility.uploadFile(request, files, product.getCode());
+		}
 		return "redirect:/Product";
 	}
 

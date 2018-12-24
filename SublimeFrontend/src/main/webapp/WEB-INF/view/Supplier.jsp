@@ -10,17 +10,20 @@
  integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" 
  crossorigin="anonymous">
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-
+<style type="text/css">
+    .background { background-color: #c0c0c0; padding: 0; color: #335500; }
+</style>
 <title>Supplier</title>
 </head>
 <body>
 <%@include file="./Shared/Header.jsp"%>
-
-<center>
+<div class="background" style="position: relative; width: 1350px; height: 100px;"> 
+</div>
+<%-- <center>
 <h1>
 <b><u>All Supplier</u></b></h1>
 </center>
-
+ --%>
 <form:form class="form-horizontal" modelAttribute="supplier" action="regSupp" method="post">
 		<fieldset>
 

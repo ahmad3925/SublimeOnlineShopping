@@ -26,7 +26,7 @@
 			login-processing-url="/perform_login"
 			authentication-failure-url="/login?error"
 			authentication-success-forward-url="/login_success" />
-	<security:logout logout-success-url="/login" logout-url="/perform_logout" />
+	<security:logout logout-success-url="/login?logout" logout-url="/perform_logout" />
 	<security:csrf disabled="true" />
 	</security:http>
 	

@@ -1,3 +1,4 @@
+
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 
@@ -8,11 +9,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%@include file="./Shared/Header.jsp"%>
+
 
 <form:form class="form-horizontal" modelAttribute="product"
 		action="${pageContext.request.contextPath}/updateProd"
-		method="post" >
+		method="post" enctype="multipart/form-data">
 		<fieldset>
 
 			<!-- Form Name -->
@@ -86,6 +87,39 @@
 				</div>
 			</div>
 
+			<div class="form-group">
+				<label class="col-md-4 control-label" for="textinput">Choose
+					Image</label>
+				<div class="col-md-8">
+					<input type="file" name="file1" />
+				</div>
+			</div>
+
+
+			<div class="form-group">
+				<label class="col-md-4 control-label" for="textinput">Choose
+					Image</label>
+				<div class="col-md-8">
+					<input type="file" name="file2" />
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<label class="col-md-4 control-label" for="textinput">Choose
+					Image</label>
+				<div class="col-md-8">
+					<input type="file" name="file3" />
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<label class="col-md-4 control-label" for="textinput">Choose
+					Image</label>
+				<div class="col-md-8">
+					<input type="file" name="file4" />
+				</div>
+			</div>
+
 			<!-- Button (Double) -->
 			<div class="form-group">
 				<label class="col-md-4 control-label" for="Submit"></label>
@@ -98,7 +132,6 @@
 
 		</fieldset>
 	</form:form>
-
 
 </body>
 </html>

@@ -1,6 +1,3 @@
-<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -11,8 +8,15 @@
  crossorigin="anonymous">
  
 <title>Insert title here</title>
+<style type="text/css">
+    .background { background-color: #c0c0c0; padding: 0; color: #335500; }
+</style>
 </head>
 <body>
+<%@include file="./Shared/Header.jsp"%>
+
+	<div class="background"
+		style="position: relative; width: 1350px; height: 120px;"></div>
 
 <table class="table">
   <thead class="thead-dark">

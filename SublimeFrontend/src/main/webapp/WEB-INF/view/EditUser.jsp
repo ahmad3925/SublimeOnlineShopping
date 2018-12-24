@@ -23,7 +23,7 @@
 					Name</label>
 				<div class="col-md-8">
 					<form:input id="Name" path="FirstName" name="name"
-						placeholder="StudentName" class="form-control input-md"
+						placeholder="FirstName" class="form-control input-md"
 						required="" type="text" />
 
 				</div>
@@ -35,7 +35,7 @@
 					Name</label>
 				<div class="col-md-8">
 					<form:input id="Name" path="LastName" name="name"
-						placeholder="StudentName" class="form-control input-md"
+						placeholder="LastName" class="form-control input-md"
 						required="" type="text" />
 
 				</div>

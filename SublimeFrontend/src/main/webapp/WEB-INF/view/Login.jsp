@@ -192,6 +192,8 @@ body {
 <title>Login/Register</title>
 </head>
 <body>
+	<%-- <%@include file="./Shared/Header.jsp"%> --%>
+
 	<c:if test="${not empty error}">
 		<div class="error">${error}</div>
 	</c:if>
@@ -257,52 +259,48 @@ body {
 										</div>
 									</div>
 								</form>
+
 								<form:form id="register-form" modelAttribute="User"
 									action="regStud" method="post" role="form"
 									style="display: none;">
-									
+
 									<div class="form-group">
 										<form:input id="textinput" path="email" name="textinput"
 											placeholder="EmailAddress" class="form-control input-md"
 											required="" type="text" />
 
 									</div>
+									<div class="form-group">
+										<form:input id="textinput" path="FirstName" name="textinput"
+											placeholder="First Name" class="form-control input-md"
+											required="" type="text" />
+
+									</div>
+									<div class="form-group">
+										<form:input id="textinput" path="LastName" name="textinput"
+											placeholder="Last Name" class="form-control input-md"
+											required="" type="text" />
+
+									</div>
 									<!-- Text input-->
 									<div class="form-group">
-										<label class="col-md-4 control-label" for="textinput">Mobile
-											Number</label>
-										<div class="col-md-5">
-											<form:input id="textinput" path="mobile" name="textinput"
-												placeholder="Enter Mobile Number"
-												class="form-control input-md" maxlength="10" required=""
-												type="text" />
 
-										</div>
+										<form:input id="textinput" path="mobile" name="textinput"
+											placeholder="Enter Mobile Number"
+											class="form-control input-md" maxlength="10" required=""
+											type="text" />
+
 									</div>
+
 									<!-- Password input-->
 									<div class="form-group">
-										<label class="col-md-4 control-label" for="passwordinput">Set
-											Password </label>
-										<div class="col-md-5">
+										
 											<form:input id="passwordinput" path="password"
-												name="passwordinput" placeholder="**************"
+												name="passwordinput" placeholder="Set Password"
 												class="form-control input-md" required="" type="text" />
 
-										</div>
 									</div>
-									<!-- Password input-->
-									<div class="form-group">
-										<label class="col-md-4 control-label" for="passwordinput">confirm
-											Password </label>
-										<div class="col-md-5">
-											<form:input id="passwordinput" path="ConfirmPassword"
-												name="passwordinput" placeholder="**************"
-												class="form-control input-md" required="" type="password" />
-
-										</div>
-									</div>
-
-									<div class="form-group">
+								<div class="form-group">
 										<div class="row">
 											<div class="col-sm-6 col-sm-offset-3">
 												<input type="submit" name="register-submit"

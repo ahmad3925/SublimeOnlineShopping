@@ -12,17 +12,23 @@
  crossorigin="anonymous">
 
 <title>Products</title>
+<style type="text/css">
+
+    .background { background-color: #c0c0c0; padding: 0; color: #335500; }
+</style>
 </head>
 <body>
 
 <%@include file="./Shared/Header.jsp"%>
-
+<div class="background" style="position: relative; width: 1350px; height: 100px;"> 
+</div>  
+<%-- 
 <center>
 <h1>
 <b><u>All Products</u></b></h1>
-</center>
+</center> --%>
 	<form:form class="form-horizontal" modelAttribute="product"
-		action="prodReg" method="POST">
+		action="prodReg" method="POST" enctype="multipart/form-data">
 		<fieldset>
 
 			<!-- Form Name -->
@@ -72,6 +78,38 @@
 						itemLabel="categoryName" itemValue="categoryId" />
 				</div>
 			</div>
+			<div class="form-group">
+				<label class="col-md-4 control-label" for="file">Choose 1st
+					Image</label>
+				<div class="col-md-4">
+					<input type="file" name="file1" class="form-control" />
+
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-md-4 control-label" for="file">Choose 2nd
+					Image</label>
+				<div class="col-md-4">
+					<input type="file" name="file2" class="form-control" />
+
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-md-4 control-label" for="file">Choose 3rd
+					Image</label>
+				<div class="col-md-4">
+					<input type="file" name="file3" class="form-control" />
+
+				</div>
+			</div><div class="form-group">
+				<label class="col-md-4 control-label" for="file">Choose 4th
+					Image</label>
+				<div class="col-md-4">
+					<input type="file" name="file4" class="form-control" />
+
+				</div>
+			</div>
+			
 
 			<!-- Text input-->
 			<div class="form-group">
@@ -109,7 +147,9 @@
 		<tbody>
 			<c:forEach items="${prodlist}" var="pro">
 				<tr>
-					
+					<td><img
+						src="${pageContext.request.contextPath}/resources/Image/${pro.code}/1.jpg"
+						height="200px" width="200px" /></td>
 					<td>${pro.prodid}</td>
 					<td>${pro.categoryId}</td>
 					<td>${pro.supplierId}</td>

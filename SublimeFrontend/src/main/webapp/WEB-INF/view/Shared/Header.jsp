@@ -1,3 +1,5 @@
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,15 +42,7 @@
 								</div>
 								<nav class="main_nav">
 									<ul>
-										<li class="hassubs active"><a
-											href="http://localhost:8080/SublimeFrontend/">Home</a>
-											<ul>
-												<li><a href="categories.html">Categories</a></li>
-												<li><a href="product.html">Product</a></li>
-												<li><a href="cart.html">Cart</a></li>
-												<li><a href="checkout.html">Check out</a></li>
-												<li><a href="contact.html">Contact</a></li>
-											</ul></li>
+										<li><a href="AllProducts">All Products</a></li>
 										<li class="hassubs"><a href="#">Manage</a>
 											<ul>
 												<li><a href="Product">Product</a></li>
@@ -56,18 +50,25 @@
 												<li><a href="Supplier">supplier</a></li>
 											</ul></li>
 										<li><a href="Register">Register</a></li>
-										<li><a href="#">Offers</a></li>
-										<li><a href="contact.html">Contact</a></li>
 										
-
-										<%-- <c:if test="${user.name==null}"> --%>
+										<c:if test="${user.firstName==null}">
 											<li><a href="login">Login/Register</a></li>
-									
+										</c:if>
+					
+											<c:if test="${user.firstName!=null}">
+                                        <li class="hassubs" items="${listUser}" var="User">
+                                        <a href="#"> Welcome ${user.firstName}</a>
+										<ul>
+													<li><a href="${pageContext.request.contextPath}/EditUser/${user.userid}">My Profile</a></li>
+													<li><a href="#">Order</a></li>
+													<li><a href="${pageContext.request.contextPath}/perform_logout">Logout</a></li>
+												</ul></li>
+                                         </c:if>
 									</ul>
 								</nav>
 								<div class="header_extra ml-auto">
 									<div class="shopping_cart">
-										<a href="cart.html"> <svg version="1.1"
+										<a href="ShoppingCart"> <svg version="1.1"
 												xmlns="http://www.w3.org/2000/svg"
 												xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 												viewBox="0 0 489 489"
@@ -169,37 +170,37 @@
 					</div>
 					<ul class="page_menu_nav menu_mm">
 						<li class="page_menu_item has-children menu_mm"><a
-							href="index.html">Home<i class="fa fa-angle-down"></i></a>
+							href="index">Home<i class="fa fa-angle-down"></i></a>
 							<ul class="page_menu_selection menu_mm">
 								<li class="page_menu_item menu_mm"><a
-									href="categories.html">Categories<i
+									href="categories">Categories<i
 										class="fa fa-angle-down"></i></a></li>
-								<li class="page_menu_item menu_mm"><a href="product.html">Product<i
+								<li class="page_menu_item menu_mm"><a href="product">Product<i
 										class="fa fa-angle-down"></i></a></li>
-								<li class="page_menu_item menu_mm"><a href="cart.html">Cart<i
+								<li class="page_menu_item menu_mm"><a href="cart">Cart<i
 										class="fa fa-angle-down"></i></a></li>
-								<li class="page_menu_item menu_mm"><a href="checkout.html">Checkout<i
+								<li class="page_menu_item menu_mm"><a href="checkout">Checkout<i
 										class="fa fa-angle-down"></i></a></li>
-								<li class="page_menu_item menu_mm"><a href="contact.html">Contact<i
+								<li class="page_menu_item menu_mm"><a href="contact">Contact<i
 										class="fa fa-angle-down"></i></a></li>
 							</ul></li>
 						<li class="page_menu_item has-children menu_mm"><a
-							href="categories.html">Categories<i class="fa fa-angle-down"></i></a>
+							href="categories">Categories<i class="fa fa-angle-down"></i></a>
 							<ul class="page_menu_selection menu_mm">
 								<li class="page_menu_item menu_mm"><a
-									href="categories.html">Category<i class="fa fa-angle-down"></i></a></li>
+									href="categories">Category<i class="fa fa-angle-down"></i></a></li>
 								<li class="page_menu_item menu_mm"><a
-									href="categories.html">Category<i class="fa fa-angle-down"></i></a></li>
+									href="categories">Category<i class="fa fa-angle-down"></i></a></li>
 								<li class="page_menu_item menu_mm"><a
-									href="categories.html">Category<i class="fa fa-angle-down"></i></a></li>
+									href="categories">Category<i class="fa fa-angle-down"></i></a></li>
 								<li class="page_menu_item menu_mm"><a
-									href="categories.html">Category<i class="fa fa-angle-down"></i></a></li>
+									href="categories">Category<i class="fa fa-angle-down"></i></a></li>
 							</ul></li>
-						<li class="page_menu_item menu_mm"><a href="index.html">Accessories<i
+						<li class="page_menu_item menu_mm"><a href="index">Accessories<i
 								class="fa fa-angle-down"></i></a></li>
 						<li class="page_menu_item menu_mm"><a href="#">Offers<i
 								class="fa fa-angle-down"></i></a></li>
-						<li class="page_menu_item menu_mm"><a href="contact.html">Contact<i
+						<li class="page_menu_item menu_mm"><a href="contact">Contact<i
 								class="fa fa-angle-down"></i></a></li>
 					</ul>
 				</div>

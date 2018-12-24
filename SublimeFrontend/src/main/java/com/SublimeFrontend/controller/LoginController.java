@@ -25,8 +25,9 @@ public class LoginController {
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public ModelAndView login(@RequestParam(value = "error", required = false) String error,
 			@RequestParam(value = "logout", required = false) String logout) {
-
 		ModelAndView model = new ModelAndView();
+		model.addObject("User", new User());
+
 		if (error != null) {
 			model.addObject("error", "Invalid username or password!");
 		}
@@ -61,3 +62,4 @@ public class LoginController {
 	
 
 }
+

@@ -11,14 +11,18 @@
  
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Category</title>
+<style type="text/css">
+    .background { background-color: #c0c0c0; padding: 0; color: #335500; }
+</style>
 </head>
 <body>
 <%@include file="./Shared/Header.jsp"%>
-
-<center>
+<div class="background" style="position: relative; width: 1350px; height: 125px;"> 
+</div>
+<%-- <center>
 <h1>
 <b><u>All Category</u></b></h1>
-</center>
+</center> --%>
 
 <form:form class="form-horizontal" modelAttribute="category" action="catReg" method="post">
 		<fieldset>
