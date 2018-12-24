@@ -10,17 +10,18 @@ import org.springframework.stereotype.Component;
 
 @Entity
 @Component
-
 public class Cart {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int cartid;
+	
 	@Column(name = "grand_total")
 	private double grandTotal;
 	@Column(name = "cart_lines")
 	private int cartLines;
 	private String email;
+	
 	public int getCartid() {
 		return cartid;
 	}

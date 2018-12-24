@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.Shopy.DAO.UserDAO;
+import com.Shopy.model.Cart;
 import com.Shopy.model.User;
 
 @Repository("UserDAO")
@@ -87,5 +88,6 @@ public class UserDAOImpl implements UserDAO {
 		}
 		
 	}
+
 
 }

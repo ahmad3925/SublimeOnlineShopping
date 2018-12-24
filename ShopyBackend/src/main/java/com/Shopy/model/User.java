@@ -18,16 +18,24 @@ public class User {
 	private String mobile;
 	private String role;
 	private String password;
-	private String ConfirmPassword;
+	
 	private boolean enable;
 
+/*	private Cart cart;
+*/
 	public int getUserid() {
 		return userid;
 	}
 	public void setUserid(int userid) {
 		this.userid = userid;
 	}
-	public String getFirstName() {
+	/*public Cart getCart() {
+		return cart;
+	}
+	public void setCart(Cart cart) {
+		this.cart = cart;
+	}
+	*/public String getFirstName() {
 		return FirstName;
 	}
 	public void setFirstName(String firstName) {
@@ -69,11 +77,6 @@ public class User {
 	public void setEnable(boolean enable) {
 		this.enable = enable;
 	}
-	public String getConfirmPassword() {
-		return ConfirmPassword;
-	}
-	public void setConfirmPassword(String confirmPassword) {
-		ConfirmPassword = confirmPassword;
-	}
+	
 
 }

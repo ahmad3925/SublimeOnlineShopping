@@ -2,6 +2,7 @@ package com.Shopy.DAO;
 
 import java.util.List;
 
+import com.Shopy.model.Cart;
 import com.Shopy.model.User;
 
 
